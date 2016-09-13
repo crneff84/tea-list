@@ -1,6 +1,7 @@
 <h1>Tea List!</h1>
 
 #if($teas)
+  <h3>Here are your teas:</h3>
   #foreach ($tea in $teas)
   <h2>$tea.getName()</h2>
   <ul>
@@ -10,21 +11,24 @@
   </ul>
   #end
   <form action="/" method="post">
-    <select name="sortby">
-      <option>name</option>
-      <option>type</option>
-      <option>rating</option>
-    </select>
-    <button type="submit">Submit</button>
+    <div class="form-group">
+      <label for="sortby">Filter by</label>
+      <select class="form-control" name="sortby">
+        <option>name</option>
+        <option>type</option>
+        <option>rating</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
 #else
   <p>No teas! Drink some tea!</p>
 #end
 
+<hr>
+<h2>Add a new Tea:</h2>
 
-<p>Add a new Tea:</p>
-
-<form action="/teas" method="post">
+<form id="addTea" action="/teas" method="post">
   <div class="form-group">
     <label for="name">Tea Name</label>
     <input id="name" class="form-control" name="name" type="text">
@@ -61,5 +65,5 @@
       <option>4 or more times</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-default">Add tea</button>
+  <button type="submit" class="btn btn-primary">Add tea</button>
 </form>
