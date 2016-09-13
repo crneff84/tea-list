@@ -9,9 +9,18 @@
     <li>How many times can you steep it: $tea.getSteep()</li>
   </ul>
   #end
+  <form action="/" method="post">
+    <select name="sortby">
+      <option>name</option>
+      <option>type</option>
+      <option>rating</option>
+    </select>
+    <button type="submit">Submit</button>
+  </form>
 #else
   <p>No teas! Drink some tea!</p>
 #end
+
 
 <p>Add a new Tea:</p>
 
