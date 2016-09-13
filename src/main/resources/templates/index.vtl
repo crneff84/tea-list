@@ -1,0 +1,56 @@
+<h1>Tea List!</h1>
+
+#if($teas)
+  #foreach ($tea in $teas)
+  <h2>$tea.getName()</h2>
+  <ul>
+    <li>Type: $tea.getType()</li>
+    <li>Rating: $tea.getRating() stars</li>
+    <li>How many times can you steep it: $tea.getSteep()</li>
+  </ul>
+  #end
+#else
+  <p>No teas! Drink some tea!</p>
+#end
+
+<p>Add a new Tea:</p>
+
+<form action="/teas" method="post">
+  <div class="form-group">
+    <label for="name">Tea Name</label>
+    <input id="name" class="form-control" name="name" type="text">
+  </div>
+  <div class="form-group">
+    <label for="type">Tea Type</label>
+    <select id="type" name="type" class="form-control">
+      <option>black</option>
+      <option>green</option>
+      <option>white</option>
+      <option>oolong</option>
+      <option>pu erh</option>
+      <option>rooibos</option>
+      <option>honeybush</option>
+      <option>herbal</option>
+      <option>olive leaf</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="rating">Tea Rating</label>
+    <select id="rating" name="rating" class="form-control">
+      <option value="1">1 star</option>
+      <option value="2">2 stars</option>
+      <option value="3">3 stars</option>
+      <option value="4">4 stars</option>
+      <option value="5">5 stars</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="steep">How many times can you steep it?</label>
+    <select id="steep" class="form-control" name="steep">
+      <option>Once</option>
+      <option>2-3 times</option>
+      <option>4 or more times</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-default">Add tea</button>
+</form>
