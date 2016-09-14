@@ -1,0 +1,10 @@
+<h1>$type.getName() Teas:</h1>
+
+<ul>
+  #foreach($tea in $type.getTeas())
+   <li><a href="/types/$type.getId()/teas/$tea.getId()">$tea.getName()</a></li>
+  #end
+</ul>
+
+<a href="/types/$type.getId()/teas/new">Add a new tea</a>
+<a href="/types">All types</a>

@@ -1,0 +1,29 @@
+<h2>Add a new $type.getName() Tea:</h2>
+
+<form id="addTea" action="/teas" method="post">
+  <input id="typeId" name="typeId" type="hidden" value="$type.getId()">
+
+  <div class="form-group">
+    <label for="name">Tea Name</label>
+    <input id="name" class="form-control" name="name" type="text">
+  </div>
+  <div class="form-group">
+    <label for="rating">Tea Rating</label>
+    <select id="rating" name="rating" class="form-control">
+      <option value="1">1 star</option>
+      <option value="2">2 stars</option>
+      <option value="3">3 stars</option>
+      <option value="4">4 stars</option>
+      <option value="5">5 stars</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="steep">How many times can you steep it?</label>
+    <select id="steep" class="form-control" name="steep">
+      <option>Once</option>
+      <option>2-3 times</option>
+      <option>4 or more times</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Add tea</button>
+</form>
