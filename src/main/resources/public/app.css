@@ -32,3 +32,15 @@ form {
 form#addTea {
   margin: 0 auto;
 }
+
+a {
+  color: darkslateblue;
+}
+
+a:visited {
+  color: maroon;
+}
+
+a:hover{
+  color: royalblue;
+}
